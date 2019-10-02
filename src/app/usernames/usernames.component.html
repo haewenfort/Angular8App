@@ -1,0 +1,13 @@
+<label>Username</label><br>
+<input 
+    type="text" 
+    class="form-contolr username" 
+    [(ngModel)]="userName"/>
+<p>{{userName}}</p>
+<button
+    class="btn btn-primary"
+    [disabled]="userName === ''"
+    (click)="resetUsername()">
+    Reset
+</button>
+
