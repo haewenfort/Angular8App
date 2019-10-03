@@ -6,14 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  servers = [];
+  serverElements = [{type:'server', name:'Server Name', content:'Server Content'}];
 
-  onAddServer() {
-    this.servers.push('Another Server');
+  onServerAdded( serverData: {serverName: string, serverContent: string} ) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
   }
 
-  onRemoveServer(id: number) {
-    const position = id;
-    this.servers.splice(position, 1);
+  onBluePrintAdded( bluePrintData: {serverName: string, serverContent: string} ) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: bluePrintData.serverName,
+      content: bluePrintData.serverContent
+    });
   }
 }
