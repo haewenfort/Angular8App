@@ -16,17 +16,17 @@ export class CockpitComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddServer() {
+  onAddServer(dataElementName,dataElementContent) {
     this.serverCreated.emit({ 
-      serverName: this.newServerName, 
-      serverContent: this.newServerContent 
+      serverName: dataElementName.value, 
+      serverContent: dataElementContent.value
     });
   }
 
-  onAddBlueprint() { 
+  onAddBlueprint(dataElementName,dataElementContent) { 
     this.blueprintCreated.emit({ 
-      serverName: this.newServerName, 
-      serverContent: this.newServerContent 
+      serverName: dataElementName.value, 
+      serverContent: dataElementContent.value
     });
   }
 }
